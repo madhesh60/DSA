@@ -23,7 +23,10 @@ public class ManageAcc {
                 }
             }
             ArrayList<String>[] addbyParents = new ArrayList[n];
-            for(Map.Entry<String,Integer> entry:map.entrySet()){
+            for (int i = 0; i < n; i++){
+                addbyParents[i] = new ArrayList<String>();
+            }
+        for(Map.Entry<String,Integer> entry:map.entrySet()){
                 String mail= entry.getKey();
                 int node= ds.findU(entry.getValue());
                 addbyParents[node].add(mail);

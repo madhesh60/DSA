@@ -26,6 +26,7 @@ public class MakeOneCmp {
             }
         }
 
+        cmp=cmp-1;
         return extra>=cmp ? cmp:-1;
     }
 }
