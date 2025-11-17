@@ -14,10 +14,10 @@ public class Permutation1 {
     static void helper(int[] arr,boolean[] check,ArrayList<ArrayList<Integer>> ans,ArrayList<Integer>temp)
     {
         if(arr.length==temp.size())
-        {
-            ans.add(new ArrayList<>(temp));
-            return;
-        }
+    {
+        ans.add(new ArrayList<>(temp));
+        return;
+    }
         for(int i=0;i<arr.length;i++)
         {
             if(!check[i])
@@ -29,6 +29,7 @@ public class Permutation1 {
                 temp.remove(temp.size()-1);
             }
         }
+
 
     }
 }

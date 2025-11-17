@@ -8,18 +8,15 @@ public class Segment {
         int endInt;
         Node left;
         Node right;
-        Node(int start,int end)
-        {
+        Node(int start,int end) {
             this.startInt=start;
             this.endInt=end;
         }
     }
-    Segment(int[] arr)
-    {
+    Segment(int[] arr) {
         this.root=construct(arr,0,arr.length-1);
     }
-    private Node construct(int[] arr,int start,int end)
-    {
+    private Node construct(int[] arr,int start,int end)  {
         if(start==end){
             Node leaf=new Node(start,end);
             leaf.sum=arr[start];
@@ -34,13 +31,11 @@ public class Segment {
 
         return node;
     }
-    public int Query(int start,int end)
-    {
+    public int Query(int start,int end){
         return Query(root,start,end);
     }
 
-    private int Query(Node node,int start,int end)
-    {
+    private int Query(Node node,int start,int end){
         if(node.startInt>=start && node.endInt<=end) {
             return node.sum;
         }
@@ -54,6 +49,7 @@ public class Segment {
     public void update(int index, int value) {
         this.root.sum = update(this.root, index, value);
     }
+
     private int update(Node node, int index, int value) {
         if (index >= node.startInt&& index <= node.endInt){
             if(index == node.startInt && index == node.endInt) {

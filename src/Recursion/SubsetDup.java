@@ -28,7 +28,5 @@ public class SubsetDup {
             helper(arr,i+1,ans,temp);
             temp.remove(temp.size()-1);
         }
-
     }
-
 }
