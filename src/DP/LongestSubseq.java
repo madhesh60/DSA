@@ -34,7 +34,7 @@ public class LongestSubseq {
         }
 
         if(s1.charAt(ind1)==s2.charAt(ind2)){
-            return dp[ind1][ind2] = 1+LongestSubseq(s1, s2,ind1-1,ind2-1,dp);
+            return dp[ind1][ind2] = 1 + LongestSubseq(s1, s2,ind1-1,ind2-1,dp);
         }
         else {
             return dp[ind1][ind2] = Math.max(LongestSubseq(s1, s2, ind1 - 1, ind2, dp), LongestSubseq(s1, s2, ind1, ind2 - 1, dp));
@@ -66,16 +66,16 @@ public class LongestSubseq {
         int ind1=s1.length();
         int ind2=s2.length();
 
-        int[] prev = new int[ind1 + 1];
-        int[] curr = new int[ind2 + 1];
+        int[] prev = new int[ind2 + 1];
 
         for(int i=1;i<=ind1;i++){
+            int[] curr = new int[ind2 + 1];
             for(int j=1;j<=ind2;j++){
                 if(s1.charAt(i-1)==s2.charAt(j-1)){
                     curr[j] = 1 + prev[j-1];
                 }
                 else {
-                    curr[j] = Math.max(prev[j], prev[j - 1]);
+                    curr[j] = Math.max(prev[j], curr[j - 1]);
                 }
             }
             prev=curr;
