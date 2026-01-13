@@ -27,7 +27,7 @@ public class LongestSubseqPrint {
 
         for(int i=1;i<=ind1;i++){
             for(int j=1;j<=ind2;j++){
-                if(s1.charAt(i-1)==s1.charAt(j-1)){
+                if(s1.charAt(i-1)==s2.charAt(j-1)){
                     dp[i][j]=1 + dp[i-1][j-1];
                 }
                 else {
@@ -48,7 +48,7 @@ public class LongestSubseqPrint {
             else if(dp[i-1][j]>dp[i][j-1]){
                 i=i-1;
             }
-            else if(dp[i-1][j]<dp[i][j-1]){
+            else{
                 j=j-1;
             }
         }
